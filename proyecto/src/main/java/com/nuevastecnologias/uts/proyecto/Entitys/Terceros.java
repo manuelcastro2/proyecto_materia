@@ -1,5 +1,6 @@
 package com.nuevastecnologias.uts.proyecto.Entitys;
 
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -24,8 +25,9 @@ public class Terceros {
     @Column(unique = true)
     private String document;
     private String address;
+    private String iphone;
     private String typethird;
-    @OneToOne(mappedBy = "terceros", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    private Facturas bill;
+    @OneToOne(mappedBy = "tercero",cascade = CascadeType.ALL,orphanRemoval = true,fetch = FetchType.LAZY)
+    private Facturas factura;
 
 }

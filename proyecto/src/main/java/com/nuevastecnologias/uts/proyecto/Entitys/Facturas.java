@@ -1,8 +1,7 @@
 package com.nuevastecnologias.uts.proyecto.Entitys;
 
-import java.util.Date;
 
-import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -23,11 +22,13 @@ public class Facturas {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String typeBill;
-    private Integer nroFactura;
-    private Date date;
-    private Float totalOperacion;
-    @OneToOne(mappedBy = "terceros", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    private Terceros tecero;
-    @JoinColumn(name = "tipofactura_id")
-    private tipoFactura tipofactura;
+    @Column(unique = true)
+    private String nroFactura;
+    private String date;
+    private Float totalOperation;
+
+    @JoinColumn(name = "tercero_id")
+    @OneToOne(fetch = FetchType.LAZY)
+    private Terceros tercero;
+ 
 }

@@ -557,13 +557,28 @@
 											"top": 401,
 											"width": 163.76806640625,
 											"height": 13
+										},
+										{
+											"_type": "ERDColumnView",
+											"_id": "AAAAAAGLJZ6dZgV5ZPk=",
+											"_parent": {
+												"$ref": "AAAAAAGK3jlWtAX6Xf8="
+											},
+											"model": {
+												"$ref": "AAAAAAGLJZ6dVwV2vmI="
+											},
+											"font": "Arial;13;0",
+											"left": 549,
+											"top": 416,
+											"width": 163.76806640625,
+											"height": 13
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 544,
 									"top": 351,
 									"width": 173.76806640625,
-									"height": 68
+									"height": 83
 								}
 							],
 							"font": "Arial;13;0",
@@ -680,7 +695,7 @@
 									"top": 333,
 									"width": 171.0908203125,
 									"height": 13,
-									"text": "tipo_factura"
+									"text": "items_factura"
 								},
 								{
 									"_type": "ERDColumnCompartmentView",
@@ -736,13 +751,28 @@
 											"top": 386,
 											"width": 161.0908203125,
 											"height": 13
+										},
+										{
+											"_type": "ERDColumnView",
+											"_id": "AAAAAAGLJZaq1AVnmYM=",
+											"_parent": {
+												"$ref": "AAAAAAGK81C9TCey0ac="
+											},
+											"model": {
+												"$ref": "AAAAAAGLJZaqvQVkYxw="
+											},
+											"font": "Arial;13;0",
+											"left": 309,
+											"top": 401,
+											"width": 161.0908203125,
+											"height": 13
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 304,
 									"top": 351,
 									"width": 171.0908203125,
-									"height": 53
+									"height": 68
 								}
 							],
 							"font": "Arial;13;0",
@@ -1806,6 +1836,15 @@
 							},
 							"name": "total_operacion",
 							"length": 0
+						},
+						{
+							"_type": "ERDColumn",
+							"_id": "AAAAAAGLJZ6dVwV2vmI=",
+							"_parent": {
+								"$ref": "AAAAAAGK3jlWtAX2uJc="
+							},
+							"name": "cliente o proveedor",
+							"length": 0
 						}
 					]
 				},
@@ -1937,7 +1976,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFLzntJC6EktCk="
 					},
-					"name": "tipo_factura",
+					"name": "items_factura",
 					"ownedElements": [
 						{
 							"_type": "ERDRelationship",
@@ -2051,6 +2090,15 @@
 								"$ref": "AAAAAAGK81C9SyeuYEA="
 							},
 							"name": "id_producto",
+							"length": 0
+						},
+						{
+							"_type": "ERDColumn",
+							"_id": "AAAAAAGLJZaqvQVkYxw=",
+							"_parent": {
+								"$ref": "AAAAAAGK81C9SyeuYEA="
+							},
+							"name": "valor_total_producto",
 							"length": 0
 						}
 					]
