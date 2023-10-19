@@ -54,4 +54,11 @@ public class usuariosServiceImpl implements UsuarioService {
         return usuariosrepository.findByTypeRol(rol);
     }
 
+    @Override
+    public void singUp(String cedula, String clave) {
+        usuariosrepository.SingUpusuario(cedula);
+        usuariosrepository.SingUppassword(clave);
+        System.out.println("inicio sesion correcto");
+    }
+
 }

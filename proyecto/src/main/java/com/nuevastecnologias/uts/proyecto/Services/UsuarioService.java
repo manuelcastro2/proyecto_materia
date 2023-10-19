@@ -15,4 +15,6 @@ public interface UsuarioService {
      Usuarios update(Usuarios usuarios, Long id);
 
      List<Usuarios> findUsuariosByTypeRol(String rol);
+
+     void singUp(String cedula,String clave);
 }

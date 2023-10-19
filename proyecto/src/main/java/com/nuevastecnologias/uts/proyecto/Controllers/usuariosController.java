@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.nuevastecnologias.uts.proyecto.Entitys.Terceros;
 import com.nuevastecnologias.uts.proyecto.Entitys.Usuarios;
 import com.nuevastecnologias.uts.proyecto.Services.UsuarioService;
 
@@ -45,6 +44,11 @@ public class usuariosController {
     @DeleteMapping("/{id}")
     public void delete(@PathVariable String id){
         usuarioService.delete(Long.parseLong(id));
+    }
+
+    @PostMapping("/iniciosesion/{cedula}/{password}")
+    public void inicioSesion(@PathVariable String cedula,@PathVariable String password){
+        usuarioService.singUp(cedula, password);
     }
 
 }
