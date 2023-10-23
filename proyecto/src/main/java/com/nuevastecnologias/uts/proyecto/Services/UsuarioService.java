@@ -4,17 +4,16 @@ import java.util.List;
 
 import com.nuevastecnologias.uts.proyecto.Entitys.Usuarios;
 
-
 public interface UsuarioService {
       List<Usuarios> findAll();
 
-     Usuarios save(Usuarios usuarios);
+      Usuarios save(Usuarios usuarios);
 
-     void delete(Long id);
+      void delete(Long id);
 
-     Usuarios update(Usuarios usuarios, Long id);
+      Usuarios update(Usuarios usuarios, Long id);
 
-     List<Usuarios> findUsuariosByTypeRol(String rol);
+      List<Usuarios> findUsuariosByTypeRol(String rol);
 
-     void singUp(String cedula,String clave);
+      void singUp(String cedula, String clave);
 }
