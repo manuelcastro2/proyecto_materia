@@ -1,6 +1,6 @@
 package com.nuevastecnologias.uts.proyecto.Entitys;
 
-
+import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
 import lombok.Data;
 
 @Data
@@ -23,9 +24,8 @@ public class Facturas {
     private String typeBill;
     @Column(unique = true)
     private String nroFactura;
-    private String date;
+    private Date date;
     private Float totalOperation;
-
     @JoinColumn(name = "tercero_id")
     @OneToOne(fetch = FetchType.LAZY)
     private Terceros tercero;

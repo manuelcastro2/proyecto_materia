@@ -1,5 +1,6 @@
 package com.nuevastecnologias.uts.proyecto.Services.Implements;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,6 +52,11 @@ public class facturasServiceImpl implements FacturaService {
     @Override
     public List<Facturas> listar() {
         return (List<Facturas>) facturasrepository.findAll();
+    }
+
+    @Override
+    public List<Facturas> ListaRango(Date DateInicial,Date DateFinal) {
+        return facturasrepository.findRandBill(DateInicial, DateFinal);
     }
 
    
