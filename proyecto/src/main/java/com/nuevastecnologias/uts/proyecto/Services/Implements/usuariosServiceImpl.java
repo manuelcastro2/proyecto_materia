@@ -76,10 +76,8 @@ public class usuariosServiceImpl implements UsuarioService {
     }
 
     @Override
-    public void singUp(String cedula, String clave) {
-        usuariosrepository.SingUpusuario(cedula);
-        usuariosrepository.SingUppassword(clave);
-        System.out.println("inicio sesion correcto");
+    public Usuarios singUp(String cedula, String clave) {
+        return usuariosrepository.SingUpusuario(cedula,hash(clave));
     }
 
 }

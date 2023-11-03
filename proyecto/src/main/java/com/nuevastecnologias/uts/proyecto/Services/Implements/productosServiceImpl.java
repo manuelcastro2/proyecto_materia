@@ -54,7 +54,11 @@ public class productosServiceImpl implements ProductoService{
       } else {
           return null;
       }
-      
+    }
+
+    @Override
+    public List<Productos> findTypeList(String typeproduct) {
+       return productorepository.findTypeProductos(typeproduct);
     }
     
 }

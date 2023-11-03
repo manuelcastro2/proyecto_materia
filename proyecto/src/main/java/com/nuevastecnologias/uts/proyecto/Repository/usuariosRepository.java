@@ -13,9 +13,7 @@ public interface usuariosRepository extends CrudRepository<Usuarios, Long> {
     @Query(value = "Select * from usuarios t where t.role=:role", nativeQuery = true)
     List<Usuarios> findByTypeRol(String role);
 
-    @Query(value = "Select * from usuarios t where t.document=:cedula", nativeQuery = true)
-    Usuarios SingUpusuario(String cedula);
+    @Query(value = "Select * from usuarios t where t.document=:cedula and t.password=:password", nativeQuery = true)
+    Usuarios SingUpusuario(String cedula,String password);
 
-    @Query(value = "Select * from usuarios t where t.password=:password", nativeQuery = true)
-    Usuarios SingUppassword(String password);
 }

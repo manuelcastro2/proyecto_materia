@@ -21,12 +21,10 @@ public class Productos {
     @Column(unique = true)
     private String codeProduct;
     private String product;
-    private String Description;
+    private String description;
     private String typeProduct;
     private String unitExtent;
     private Float valueUnitary;
     private Float percentageIVA;    
-
-    
 
 }

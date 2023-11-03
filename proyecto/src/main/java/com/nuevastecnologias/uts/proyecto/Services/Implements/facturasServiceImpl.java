@@ -41,7 +41,6 @@ public class facturasServiceImpl implements FacturaService {
         itemsFaRepository.saveAll(itemsfactura);
          facturasrepository.save(factura);
          return " "+savefacturas;
-
     }
 
     @Override

@@ -1,8 +1,9 @@
-package com.nuevastecnologias.uts.proyecto.Controllers;
+    package com.nuevastecnologias.uts.proyecto.Controllers;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Import;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.nuevastecnologias.uts.proyecto.Entitys.Usuarios;
 import com.nuevastecnologias.uts.proyecto.Services.UsuarioService;
 
+@Import(configuracion.class)
 @RestController
 @RequestMapping("/usuario")
 public class usuariosController {
@@ -46,9 +48,9 @@ public class usuariosController {
         usuarioService.delete(Long.parseLong(id));
     }
 
-    @PostMapping("/iniciosesion/{cedula}/{password}")
-    public void inicioSesion(@PathVariable String cedula,@PathVariable String password){
-        usuarioService.singUp(cedula, password);
+    @PostMapping("/{cedula}/{password}")
+    public Usuarios inicioSesion(@PathVariable String cedula,@PathVariable String password){
+       return usuarioService.singUp(cedula, password);
     }
 
 }

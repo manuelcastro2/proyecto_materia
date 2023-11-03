@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import SingUp from './Componentes/SingUp';
+import RegisterUsers from './Componentes/usuario/registerUsers';
+import RegisterTercero from './Componentes/tercero/registerTercero';
+import RegisterProducto from './Componentes/Producto/registerProducto'
+import Menu from './Componentes/menus/Pantallaprincipal'
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<SingUp />}></Route>
+          <Route path='/menu' element={<Menu />}></Route>
+          <Route path='/usuario' element={<RegisterUsers />}></Route>
+          <Route path='/tercero' element={<RegisterTercero />}></Route>
+          <Route path='/producto' element={<RegisterProducto />}></Route>
+        </Routes>
+      </BrowserRouter>
+
     </div>
   );
 }

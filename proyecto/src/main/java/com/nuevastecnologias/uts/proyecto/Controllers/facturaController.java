@@ -32,13 +32,11 @@ public class facturaController {
   @GetMapping("/{typefactura}")
   public List<Facturas> TypeFactura(@PathVariable String typefactura) {
     return facturaservice.fypeFill(typefactura);
-
   }
 
   @GetMapping("/")
   public List<Facturas> findAll() {
     return facturaservice.listar();
-
   }
 
   @GetMapping("/{fechaInicial}/{fechaFinal}")

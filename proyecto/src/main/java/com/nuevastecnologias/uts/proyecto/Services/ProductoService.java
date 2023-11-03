@@ -15,4 +15,6 @@ public interface ProductoService {
     Productos findcodeProductByType(String codeProduct);
 
     Productos update(Productos producto,Long id);
+
+    List<Productos> findTypeList(String typeproduct);
 }

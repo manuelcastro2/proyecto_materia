@@ -1,4 +1,4 @@
-package com.nuevastecnologias.uts.proyecto.Entitys;
+    package com.nuevastecnologias.uts.proyecto.Entitys;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
