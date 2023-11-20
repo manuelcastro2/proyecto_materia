@@ -10,6 +10,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.Data;
 
 @Entity
@@ -27,7 +30,5 @@ public class Terceros {
     private String address;
     private String iphone;
     private String typethird;
-    @OneToOne(mappedBy = "tercero",cascade = CascadeType.ALL,orphanRemoval = true,fetch = FetchType.LAZY)
-    private Facturas factura;
 
 }

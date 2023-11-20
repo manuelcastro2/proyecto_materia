@@ -16,4 +16,5 @@ public interface TerceroService {
 
      List<Terceros> findTercerosByType(String typeThird);
 
+     Terceros FindDocument(String document);
 }

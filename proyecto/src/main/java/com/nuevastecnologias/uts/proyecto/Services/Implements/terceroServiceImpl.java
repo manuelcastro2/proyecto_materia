@@ -56,5 +56,10 @@ public class terceroServiceImpl implements TerceroService{
       }
       
    }
+
+   @Override
+   public Terceros FindDocument(String document) {
+     return tercerosRepository.findByDocument(document);
+   }
     
 }

@@ -15,4 +15,6 @@ public interface tercerosRepository extends CrudRepository<Terceros,Long> {
     @Query(value = "Select * from terceros t where t.typethird=:typethird", nativeQuery = true)
     List<Terceros> findByTypethird(String typethird);
 
+    @Query(value = "Select * from terceros t where t.document=:document", nativeQuery = true)
+    Terceros findByDocument(String document);
 }

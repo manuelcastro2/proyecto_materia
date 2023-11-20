@@ -48,10 +48,5 @@ public class productoController {
         productoService.delete(id);
     }
 
-    @PostMapping("/tipoProduct/{tipo}")
-    public List<Productos> tipoProducto(@PathVariable String tipo){
-        return productoService.findTypeList(tipo);
-    }
-
 
 }

@@ -16,4 +16,6 @@ public interface UsuarioService {
       List<Usuarios> findUsuariosByTypeRol(String rol);
 
       Usuarios singUp(String cedula, String clave);
+
+      Usuarios findByid(String cedula);
 }

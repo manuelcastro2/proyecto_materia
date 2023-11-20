@@ -80,4 +80,9 @@ public class usuariosServiceImpl implements UsuarioService {
         return usuariosrepository.SingUpusuario(cedula,hash(clave));
     }
 
+    @Override
+    public Usuarios findByid(String cedula) {
+        return usuariosrepository.Findbyid(cedula);
+    }
+
 }

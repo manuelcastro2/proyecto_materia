@@ -21,9 +21,10 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #c1d5ff;
+    background-color: #cddef0;
     border-radius: 15px;
     box-shadow:  0px 0px 10px rgb(32, 32, 32);
+    
 }
 
 .Button-Entrar{
@@ -36,11 +37,11 @@
 }
 
 .Button-Entrar:hover{
-    box-shadow: 0px 0px 5px rgb(160, 160, 160);
+    box-shadow: 0px 0px 5px #0C161C;
 }
 
 .Button-Entrar:focus{
-    background-color: #333a47;
+    background-color: #0C161C;
     color: white;
 }
 

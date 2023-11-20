@@ -48,4 +48,9 @@ public class terceroController {
         terceroService.delete(id);
     }
 
+    @GetMapping("/document/{document}")
+    public Terceros FindDocument(@PathVariable String document){
+        return terceroService.FindDocument(document);
+    }
+
 }

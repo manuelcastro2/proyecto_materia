@@ -33,6 +33,11 @@ public class usuariosController {
         return usuarioService.findUsuariosByTypeRol(tipotercero);
     }
 
+    @GetMapping("/cedula/{cedula}")
+    public Usuarios findbyCedula(@PathVariable String cedula){
+        return usuarioService.findByid(cedula);
+    }
+
     @PostMapping("/")
     public Usuarios save(@RequestBody Usuarios terceros){
         return usuarioService.save(terceros);
