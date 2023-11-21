@@ -21,11 +21,9 @@ function SingUp() {
     const Datos = async () => {
         if (cedula != '' && clave != '') {
             setLoading(true)
-            console.log(clave);
-            console.log(cedula);
             await axios.post(`${endpoint}/${cedula}/${clave}`).then(datos => {
                 setLoading(false)
-                console.log(datos.data);
+                if (datos.data) {
                     navigate('/menu', {
                         state: {
                             DatosUsuario: {
@@ -36,6 +34,9 @@ function SingUp() {
                             }
                         }
                     })
+                } else {
+                    setFalloSesion(true)
+                }
             })
         } else {
             setFalloSesion(true)

@@ -57,12 +57,12 @@ const RegisterUsuario = ({ Actualizar }) => {
             const getIdUsuario = async () => {
                 const response = await axios.get(`${endpoint}/cedula/${Actualizar}`)
                 console.log(response.data);
-                    setId(response.data.id)
-                    setNombre(response.data.name)
-                    setCedula(response.data.document)
-                    setApellido(response.data.lastname)
-                    setRol(response.data.role)
-                    setClave(response.data.password)
+                setId(response.data.id)
+                setNombre(response.data.name)
+                setCedula(response.data.document)
+                setApellido(response.data.lastname)
+                setRol(response.data.role)
+                setClave(response.data.password)
             }
             getIdUsuario()
         }
@@ -104,12 +104,13 @@ const RegisterUsuario = ({ Actualizar }) => {
                         <label className='label-tercero' for="">Cedula</label>
                     </div>
                     <div className='container-Input'>
-                        <input className='Input-text' type="text"
-                            name="Rol"
-                            placeholder='Rol'
-                            id='rol'
+                        <select className='Input-text'
                             value={rol}
-                            onChange={(e) => setRol(e.target.value)} />
+                            onChange={(e) => setRol(e.target.value)}>
+                            <option value="administrador">Administrador</option>
+                            <option value="ventas">Ventas</option>
+                            <option value="bodegas">Bodegas</option>
+                        </select>
                         <label className='label-tercero' for="">Rol</label>
                     </div>
                     <div className='container-Input'>

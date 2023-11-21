@@ -195,3 +195,65 @@ th {
     min-width: 15%;
     background-color: #72A1C0;
 }
+
+.container-rango {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container-fechas {
+    width: 30%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.container-informe {
+    width: 70%;
+    height: auto;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabla-informe{
+    font-weight: 600;
+    border: 1px solid black;
+    background-color: #ffff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 95%;
+    height: 115%;
+    position: relative;
+    top: 50px;
+}
+
+.container-input-fechas {
+    position: relative;
+    padding: 20px 0 0;
+    width: 100%;
+    max-width: 500px;
+    left: 10px;
+}
+
+.td-informe{
+    background-color: #72A1C0;
+    width: 180px;
+    height: 35px;
+}
+
+.td-valor{
+    width: 180px;
+    height: 35px;
+}
+
+
+.thead-informe{
+    width: 100%;
+}

@@ -37,7 +37,7 @@ function RegistrarTercero({ Actualizar }) {
                 setTipoTercero("")
             }
         } else {
-            const response = await axios.patch(`${endpoint}/${Id}`, {
+            const response = await axios.post(`${endpoint}${Id}`, {
                 id: Id,
                 name: name,
                 typeDocument: tipoDoc,
@@ -88,12 +88,13 @@ function RegistrarTercero({ Actualizar }) {
             <form onSubmit={Enviar}>
                 <div className='container-interno-Tercero field'>
                     <div className='container-Input'>
-                        <input className='Input-text' type="text"
-                            name="tipotercero"
-                            placeholder='Tipotercero'
-                            id='tipotercero'
+                        <select className='Input-text'
                             value={tipoTercero}
-                            onChange={(e) => setTipoTercero(e.target.value)} />
+                            onChange={(e) => setTipoTercero(e.target.value)} >
+                            <option value="">Seleccione una opcion</option>
+                            <option value="cliente">Cliente</option>
+                            <option value="proveedor">Proveedor</option>
+                        </select>
                         <label className='label-tercero' for="">Tipo tercero</label>
                     </div>
                     <div className='container-Input'>
@@ -103,15 +104,18 @@ function RegistrarTercero({ Actualizar }) {
                             id='Name'
                             value={name}
                             onChange={(e) => setName(e.target.value)} />
-                        <label className='label-tercero' for="">Nombre</label>
+                        <label className='label-tercero' for="">Nombre o razon social</label>
                     </div>
                     <div className='container-Input'>
-                        <input className='Input-text' type="text"
-                            name="tipoDoc"
-                            placeholder='Tipo documento'
-                            id='tipoDoc'
+                        <select className='Input-text'
                             value={tipoDoc}
-                            onChange={(e) => setTipoDoc(e.target.value)} />
+                            onChange={(e) => setTipoDoc(e.target.value)} >
+                            <option value="">Seleccione una opcion</option>
+                            <option value="cedula">Cedula</option>
+                            <option value="nit">Nit</option>
+                            <option value="cedula extranjera">Cedula Extranjera</option>
+                            <option value="pasaporte">Pasaporte</option>
+                        </select>
                         <label className='label-tercero' for="">Tipo documento</label>
                     </div>
                     <div className='container-Input'>

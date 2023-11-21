@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './../../Estilos/EstiloMenu.css'
 import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { jsPDF } from 'jspdf'
+import { GenerarPdf } from './GenerarFacturas'
 import Banner from './Banner'
 import Panel from './Barra'
 import AlertRequerimiento from './AlertRequerimiento';
@@ -17,7 +17,7 @@ const MenuTercero = () => {
     const [DatosUsuario, setDatosUsuario] = useState("")
     const [DatosMostrar, setDatosMostrar] = useState([])
     const [EstadoRegistrarUsuario, setEstadoRegistrarUsuario] = useState(false)
-    const [factura, setFactura] = useState({})
+    const factura = {}
     const [Tercero, setTercero] = useState('')
     const [busqueda, setbusqueda] = useState("")
     const [EstadoSesion, SetEstadoSesion] = useState(false)
@@ -60,35 +60,7 @@ const MenuTercero = () => {
 
 
     }
-
-    const GenerarPdf = () => {
-        console.log(factura);
-        const doc = new jsPDF()
-        doc.text('Factura', 95, 20)
-        doc.text(`Numero Factura: ${factura.nroFactura}`, 10, 30)
-        doc.text(`Fecha: ${factura.fecha}`, 10, 40)
-        doc.text(`Cliente: ${factura.nombreCliente}`, 10, 50)
-        doc.text(`Documento: ${factura.documento}`, 10, 60)
-        doc.text(`Elementos`, 10, 70)
-        let aumento = 10
-        let bajar = 80
-        factura.elementos.forEach((item) => {
-            doc.text(`${item.nombre}`, aumento, bajar)
-            aumento = aumento + 50
-            doc.text(`${item.unidad}`, aumento, bajar)
-            aumento = aumento + 25
-            doc.text(`${item.cantidad}`, aumento, bajar)
-            aumento = aumento + 10
-            doc.text(`${item.ValorProducto}`, aumento, bajar)
-            aumento = 10
-            bajar = bajar + 10
-        })
-        doc.text(`Valor total: ${factura.valor}`, 10, 100)
-
-        doc.save(`factura_${factura.nroFactura}.pdf`)
-    }
-
-
+    
     const MostrarInfo = () => {
         if (loading) {
             return (
@@ -126,7 +98,8 @@ const MenuTercero = () => {
                                     <button className='Button-acciones'
                                         type="submit"
                                         onClick={() => {
-                                            setFactura({
+
+                                            GenerarPdf({
                                                 nroFactura: item.nroFactura,
                                                 tipofactura: item.tipofactura,
                                                 nombreCliente: item.tercero.nombre,
@@ -135,7 +108,6 @@ const MenuTercero = () => {
                                                 elementos: item.elementos,
                                                 valor: item.totalOperacion
                                             })
-                                            GenerarPdf()
                                         }}
                                     >Ver factura</button>
                                 </div>
