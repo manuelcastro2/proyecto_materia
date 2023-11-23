@@ -110,11 +110,19 @@ const MenuTercero = () => {
                                     Valor unitario: {item.valueUnitary}
                                 </div>
                                 <div className='text-Mostrar'>
-                                    <button className='Button-acciones' onClick={() => {
-                                        SetId(item.codeProduct)
-                                        setEstadoRegistrarUsuario(!EstadoRegistrarUsuario)
-                                    }} type="submit">Actualizar</button>
-                                    <button className='Button-acciones' onClick={() => EliminarProducto(item.id)} type="submit">Eliminar</button>
+                                    {DatosUsuario.rol != "ventas" ? (
+                                        <div>
+                                            <button className='Button-acciones' onClick={() => {
+                                                SetId(item.codeProduct)
+                                                setEstadoRegistrarUsuario(!EstadoRegistrarUsuario)
+                                            }} type="submit">Actualizar</button>
+                                            <button className='Button-acciones' onClick={() => EliminarProducto(item.id)} type="submit">Eliminar</button>
+                                        </div>
+                                    ) : (
+                                        <div>
+
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </div>

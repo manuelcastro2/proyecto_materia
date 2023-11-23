@@ -30,20 +30,25 @@ export function GenerarPdf(factura) {
 export function GenerarInforme(informe) {
     const doc = new jsPDF()
     doc.text('INFORME', 95, 10)
-    doc.text("Venta", 20, 20)
-    doc.text("Costo de venta", 40, 20)
-    doc.text("Margen de utilidad", 80, 20)
-    doc.text("Porcentaje", 130, 20)
-    let aumento = 20
+    doc.text("Venta", 10, 20)
+    doc.text("Costo de venta", 30, 20)
+    doc.text("Margen de utilidad", 70, 20)
+    doc.text("Porcentaje", 120, 20)
+    doc.text("fecha", 150, 20)
+    let aumento = 10
     let bajar = 30
     informe.forEach((item) => {
         doc.text(`${item.valorVenta}`, aumento, bajar)
-        aumento = aumento + 30
+        aumento = aumento + 20
         doc.text(`${item.valorCompra}`, aumento, bajar)
-        aumento = aumento + 50
-        doc.text(`${item.margen}`, aumento, bajar)
         aumento = aumento + 40
+        doc.text(`${item.margen}`, aumento, bajar)
+        aumento = aumento + 30
         doc.text(`${item.porcentaje}`, aumento, bajar)
+        aumento = aumento + 20
+        doc.text(`${item.fechaIncial}`, aumento, bajar)
+        aumento = aumento + 30
+        doc.text(`${item.fechaFinal}`, aumento, bajar)
         aumento = 20
         bajar = bajar + 10
     })

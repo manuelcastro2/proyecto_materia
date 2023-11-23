@@ -60,7 +60,7 @@ const MenuTercero = () => {
 
 
     }
-    
+
     const MostrarInfo = () => {
         if (loading) {
             return (
@@ -140,13 +140,9 @@ const MenuTercero = () => {
                     <div className='container-info'>
                         <div className='container-busqueda'>
                             <div className='container-busqueda-input'>
-                                <input className='Input-text' type="text" placeholder='Filtrar'
-                                    value={busqueda}
-                                    onChange={(event) => setbusqueda(event.target.value)} />
-                                <label className='label-tercero' for="">Busqueda</label>
-                                <button className='Button-Entrar' type="submit"
-                                    onClick={() => Vista()}
-                                >Buscar</button>
+                                <h1>
+                                    FACTURAS DE VENTA
+                                </h1>
                             </div>
                         </div>
                         <div className='container-listado'>

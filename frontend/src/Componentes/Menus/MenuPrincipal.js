@@ -32,7 +32,7 @@ const MenuPrincipal = () => {
     //funcion donde manejo el mostrado diferentes atravez de los roles
     function menuRol() {
         if (DatosUsuario && DatosUsuario.rol) {
-            if (DatosUsuario.rol == "bodega") {
+            if (DatosUsuario.rol == "bodegas") {
                 //bototn donde me redireciono al menu de pedidos(ese falta crear)
                 return (
                     <div>
