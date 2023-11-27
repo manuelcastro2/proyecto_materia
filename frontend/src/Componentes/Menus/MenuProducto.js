@@ -143,10 +143,17 @@ const MenuTercero = () => {
             <div className='container-principal'>
                 <div className='container-menu'>
                     <Banner DatosUsuario={DatosUsuario}></Banner>
-                    <button onClick={() => {
-                        setEstadoRegistrarUsuario(!EstadoRegistrarUsuario)
-                        SetId(undefined)
-                    }} className='button-Agregar' type="submit"><p className='text-PANEL'>Agregar</p></button>
+                    {DatosUsuario.rol != "ventas" ? (
+                        <button onClick={() => {
+                            setEstadoRegistrarUsuario(!EstadoRegistrarUsuario)
+                            SetId(undefined)
+                        }} className='button-Agregar' type="submit"><p className='text-PANEL'>Agregar</p></button>
+                    ) : (
+                        <div>
+
+                        </div>
+                    )}
+
                 </div>
                 <div className='container-panel'>
                     <Panel panel="Lista Productos"></Panel>
