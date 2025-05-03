@@ -39,7 +39,6 @@ public class productosServiceImpl implements ProductoService{
     @Override
     public Productos update(Productos producto,Long id) {
         Optional<Productos> productoOptional = productorepository.findById(id);
-      
       if (productoOptional.isPresent()) {
           Productos productoCurrent = productoOptional.get();
           productoCurrent.setCodeProduct(producto.getCodeProduct());

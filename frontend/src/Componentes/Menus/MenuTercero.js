@@ -11,15 +11,9 @@ import Panel from './Barra'
 import AlertRequerimiento from './AlertRequerimiento';
 import PantallaCarga from './PantallaCarga';
 
-//para invocar al backend en la parte de productos
 const endpoint = 'http://localhost:3333/tercero'
-
-//funcion general
 const MenuTercero = () => {
 
-    //metodo state y de estados de los datos del usuario del inicio de sesion
-    //y los estados de mostrar y consultas y de los alert de que se guardo y elimino correctamente
-    //y las diferentes acciones que se hacen en el menu
     const { state } = useLocation();
     const [DatosUsuario, setDatosUsuario] = useState("")
     const [DatosMostrar, setDatosMostrar] = useState([])
@@ -69,9 +63,6 @@ const MenuTercero = () => {
             setLoading(false)
             setDatosMostrar(datos.data)
         })
-
-
-
     }
 
     //funcion de consulta especifica
@@ -233,7 +224,8 @@ const MenuTercero = () => {
                             <div className='Container-Alert-interno'>
                                 <p className='Text-Alert'>
                                     <p>Se {Accion} al {Dato}</p>
-                                    <button className='button-Alert' type="submit" onClick={() => setEstadoAlertAccion(!EstadoAlertAccion)}>Cerrar</button>
+                                    <button className='button-Alert' type="submit" 
+                                    onClick={() => setEstadoAlertAccion(!EstadoAlertAccion)}>Cerrar</button>
                                 </p>
                             </div>
                         </div>

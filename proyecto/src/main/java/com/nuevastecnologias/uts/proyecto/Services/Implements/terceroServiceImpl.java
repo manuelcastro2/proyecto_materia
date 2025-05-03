@@ -61,5 +61,4 @@ public class terceroServiceImpl implements TerceroService{
    public Terceros FindDocument(String document) {
      return tercerosRepository.findByDocument(document);
    }
-    
 }
